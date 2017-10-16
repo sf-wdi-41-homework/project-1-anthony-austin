@@ -1,0 +1,24 @@
+{
+  "name": "project01",
+  "version": "1.0.0",
+  "description": "favorite tv show poll",
+  "main": "seed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyA88/Project01.git"
+  },
+  "author": "Anthony Austin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyA88/Project01/issues"
+  },
+  "homepage": "https://github.com/AnthonyA88/Project01#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.12.3"
+  }
+}
