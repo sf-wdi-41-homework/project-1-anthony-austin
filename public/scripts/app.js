@@ -5,11 +5,7 @@ var allShows = [];
 
 $(document).ready(function(){
 
-	
-
-
-
-	$showList = $('#showTarget');
+$showList = $('#showTarget');
 	  $.ajax({
 	    method: 'GET',
 	    url: '/api/shows',
@@ -61,10 +57,6 @@ function handleError(a, b, c) {
   $('#showTarget').text('Failed to load all show.');
 }
 
-function handleError(a, b, c) {
-  console.log(b, c);
-  $('#showTarget').text('Failed to load all show.');
-}
 
 function newShowSuccess(json) {
   $('#newShowForm input').val('');
@@ -96,10 +88,8 @@ function deleteShowError(a, b, c) {
 };
 
 
-
-
-$('button').click(function(){
-	$(this).css("background-color", "light grey");
-}, function(){
-	$(this).css("background-color", "grey");
-});
+// $('button').click(function(){
+// 	$(this).css("background-color", "light grey");
+// }, function(){
+// 	$(this).css("background-color", "grey");
+// });
