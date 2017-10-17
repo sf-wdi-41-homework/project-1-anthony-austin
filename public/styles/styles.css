@@ -4,6 +4,7 @@ body {
 	background-blend-mode: color;
 	background-size: cover;
 
+
 }
 header {
   text-align: center;
@@ -16,4 +17,21 @@ form {
   background: rgba(0, 0, 0, 0.5);
   height: 400px;
 	margin: -15px;
+  vertical-align: middle;
 }
+
+h3 {
+	text-align: center;
+	color: #f2eeea;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 36px;
+}
+
+
+.centerall {
+	
+	justify-content: center;
+	align-items: center;
+
+}
+
