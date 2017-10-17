@@ -5,6 +5,10 @@ var allShows = [];
 
 $(document).ready(function(){
 
+	
+
+
+
 	$showList = $('#showTarget');
 	  $.ajax({
 	    method: 'GET',
@@ -90,3 +94,12 @@ function deleteShowError(a, b, c) {
   console.log(b ,c);
   console.log('Delete show error.');
 };
+
+
+
+
+$('button').click(function(){
+	$(this).css("background-color", "light grey");
+}, function(){
+	$(this).css("background-color", "grey");
+});

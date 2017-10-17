@@ -3,21 +3,21 @@ body {
 	background: url("images/tv_field.jpg") no-repeat center center fixed;
 	background-blend-mode: color;
 	background-size: cover;
-
-
 }
+
+
 header {
   text-align: center;
   height: 200px;
-
 }
 
 form {
   text-align: center;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   height: 400px;
 	margin: -15px;
   vertical-align: middle;
+  padding: 12px;
 }
 
 h3 {
@@ -25,13 +25,14 @@ h3 {
 	color: #f2eeea;
 	font-family: 'Shadows Into Light', cursive;
 	font-size: 36px;
+	padding: 10px;
 }
 
 
-.centerall {
-	
+.centerall {	
 	justify-content: center;
 	align-items: center;
-
 }
+
+
 
