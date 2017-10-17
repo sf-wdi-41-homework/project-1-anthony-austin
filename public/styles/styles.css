@@ -1,16 +1,14 @@
 body {
-
-
 	background-color: rgba(44, 141, 169, 0.4) !important;
 	background: url("images/tv_field.jpg") no-repeat center center fixed;
 	background-blend-mode: color;
 	background-size: cover;
 }
 
+
 header {
   text-align: center;
   height: 200px;
-
 }
 
 form {
@@ -31,14 +29,10 @@ h3 {
 }
 
 
-.centerall {
-	
+.centerall {	
 	justify-content: center;
 	align-items: center;
-
 }
 
-button {
-	padding: 20 20 20 20px;
-}
+
 
