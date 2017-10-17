@@ -1,5 +1,5 @@
 body {
-	background-image: url("images/tv_field.jpg");
+	background: url("images/tv_field.jpg"), no-repeat center center fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
