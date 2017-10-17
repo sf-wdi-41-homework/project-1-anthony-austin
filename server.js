@@ -2,7 +2,6 @@ var express = require('express'),
   app = express();
 
 
-
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
   extended: true
@@ -16,7 +15,6 @@ app.use(function (req, res, next) {
 });
 
 var db = require('./models');
-
 
 
 app.use(express.static('public'));
