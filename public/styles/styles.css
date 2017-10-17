@@ -1,7 +1,23 @@
 body {
-	background-image: url("images/tv_field.jpg");
+	background-color: rgba(44, 141, 169, 0.4) !important;
+	background: url("images/tv_field.jpg") no-repeat center center fixed;
+	background-blend-mode: color;
 	background-size: cover;
-	background-repeat: no-repeat;
+
+
+}
+header {
+  text-align: center;
+  height: 200px;
+
+}
+
+form {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  height: 400px;
+	margin: -15px;
+  vertical-align: middle;
 }
 
 h3 {
@@ -11,9 +27,6 @@ h3 {
 	font-size: 36px;
 }
 
-form {
-	vertical-align: middle;
-}
 
 .centerall {
 	
@@ -21,3 +34,4 @@ form {
 	align-items: center;
 
 }
+
