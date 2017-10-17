@@ -6,10 +6,18 @@ body {
 
 h3 {
 	text-align: center;
-
+	color: #f2eeea;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 36px;
 }
 
 form {
-
+	vertical-align: middle;
 }
 
+.centerall {
+	
+	justify-content: center;
+	align-items: center;
+
+}
