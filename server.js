@@ -47,13 +47,13 @@ app.delete('/api/show/:id', function apiRemoveShow(req, res) {
   });
 });
 
-app.get('/api/shows', function apiTvShow(req, res) {
+app.get('/api/shows', function apiShow(req, res) {
   db.Show.find()
-    .exec(function (err, allTVShows) {
+    .exec(function (err, allShows) {
       if (err) {
         return console.log("index error: " + err);
       }
-      res.json(allTVShows);
+      res.json(allShows);
     });
 });
 
