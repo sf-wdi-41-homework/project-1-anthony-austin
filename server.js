@@ -1,6 +1,6 @@
 var express = require('express'),
 app = express();
-
+var ejsLayouts = require('express-ejs-layouts');
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
@@ -16,30 +16,27 @@ app.use(function (req, res, next) {
 
 var db = require('./models');
 
-
+app.use(ejsLayouts);
 app.use(express.static('public'));
-
+app.set('view engine', 'ejs');
 
 app.get('/', function homepage(req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/layout.ejs');
 });
 
 //create a show
 app.post('/api/shows', function (req, res) {
-  var newShow = new db.Show({
-    title: req.body.title
-  });
+  var newShow = new db.Show(req.body);
   newShow.save(function (err, show) {
     if (err) {
       return console.log("save error: " + err)
     }
-    console.log("saved ", show);
     res.json(show);
   });
 });
 
 //delete a show
-app.delete('/api/show/:id', function apiRemoveShow(req, res) {
+app.delete('/api/show/:id', function (req, res) {
   console.log('show delete', req.params);
   var showId = req.params.id;
   db.Show.findOneAndRemove({_id: showId},function (err, deletedShow) {
@@ -47,14 +44,17 @@ app.delete('/api/show/:id', function apiRemoveShow(req, res) {
   });
 });
 
-app.get('/api/shows', function apiShow(req, res) {
+
+app.get('/api/shows', function (req, res) {
+  //let shows = db.Show.find()
   db.Show.find()
-    .exec(function (err, allShows) {
+    .exec(function(err, shows){
       if (err) {
-        return console.log("index error: " + err);
+        res.json({"err": err})
       }
-      res.json(allShows);
-    });
+      console.log(shows)
+      res.render('index', {'shows': shows});
+    })
 });
 
 
