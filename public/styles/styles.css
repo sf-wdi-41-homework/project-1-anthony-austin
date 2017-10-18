@@ -8,13 +8,13 @@ body {
 
 header {
   text-align: center;
-  height: 200px;
+  height: 100px;
 }
 
 form {
   text-align: center;
   background: rgba(0, 0, 0, 0.4);
-  height: 400px;
+  height: 200px;
 	margin: -15px;
   vertical-align: middle;
   padding: 12px;
@@ -29,10 +29,7 @@ h3 {
 }
 
 
-.centerall {	
+.centerall {
 	justify-content: center;
 	align-items: center;
 }
-
-
-

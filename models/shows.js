@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
 
 var ShowSchema = new Schema({
   title: String,
-  imageUrl: String,
-  genre: String,
-  description: String,
+  // imageUrl: String,
+  // genre: String,
+  // description: String,
 })
 
 var Shows = mongoose.model('Shows', ShowSchema);
 
-module.exports = Shows
+module.exports = Shows;

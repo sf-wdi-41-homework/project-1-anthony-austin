@@ -1,5 +1,5 @@
 var express = require('express'),
-  app = express();
+app = express();
 
 
 var bodyParser = require('body-parser');
@@ -45,6 +45,16 @@ app.delete('/api/show/:id', function apiRemoveShow(req, res) {
   db.Show.findOneAndRemove({_id: showId},function (err, deletedShow) {
     res.json(deletedShow);
   });
+});
+
+app.get('/api/shows', function apiTvShow(req, res) {
+  db.Show.find()
+    .exec(function (err, allTVShows) {
+      if (err) {
+        return console.log("index error: " + err);
+      }
+      res.json(allTVShows);
+    });
 });
 
 
