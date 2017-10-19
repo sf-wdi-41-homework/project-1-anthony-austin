@@ -17,25 +17,8 @@
 	<div class="container-fluid">
 		<header>
 		</header>
-
-		<form class="form-horizontal" id="newShowForm" action="api/shows" method="POST">
-			<h3> Cast your vote for your favorite television shows</h3>
-			<div class="row">
-				<div class="col-md-3">
-					<input type="first name" class="form-control" placeholder="First name">
-					<input type="last name" class="form-control" placeholder="Last name">
-				</div>
-				<div class="col-md-4">
-					<input type="text" class="form-control" name="title" placeholder="First Show">
-	  			<input type="text" class="form-control" name="title" placeholder="Second Show">
-					<input type="text" class="form-control" name="title" placeholder="Third Show">
-				</div>
-				<div>
-					<button type="submit" class="btn btn-default"><a>Submit</a></button>
-				</div>
-			</div>
-	</div>
-	</form>
+		<%- body %>
+		
 	</div>
 
 	<div id="showTarget">
