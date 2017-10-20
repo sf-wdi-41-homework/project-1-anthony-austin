@@ -1,5 +1,5 @@
 var express = require('express'),
-app = express();
+  app = express();
 var ejsLayouts = require('express-ejs-layouts');
 
 var bodyParser = require('body-parser');
@@ -26,7 +26,10 @@ app.get('/', function homepage(req, res) {
 
 //create a show
 app.post('/api/shows', function (req, res) {
-  var newShow = new db.Show(req.body);
+  var newShow = new db.Show({
+    title: req.body.title,
+    users: req.body.users
+  });
   newShow.save(function (err, show) {
     if (err) {
       return console.log("save error: " + err)
@@ -35,11 +38,18 @@ app.post('/api/shows', function (req, res) {
   });
 });
 
+// function splitLowercase(threeShows) {
+//   upperCase = threeShows.toUpperCase(),
+//   upSplit = upperCase.split(',');
+//   return upSplit;
+// });
 //delete a show
 app.delete('/api/show/:id', function (req, res) {
   console.log('show delete', req.params);
   var showId = req.params.id;
-  db.Show.findOneAndRemove({_id: showId},function (err, deletedShow) {
+  db.Show.findOneAndRemove({
+    _id: showId
+  }, function (err, deletedShow) {
     res.json(deletedShow);
   });
 });
@@ -48,14 +58,20 @@ app.delete('/api/show/:id', function (req, res) {
 app.get('/api/shows', function (req, res) {
   //let shows = db.Show.find()
   db.Show.find()
-    .exec(function(err, shows){
+    .exec(function (err, shows) {
       if (err) {
-        res.json({"err": err})
+        res.json({
+          "err": err
+        })
       }
       console.log(shows)
-      res.render('index', {'shows': shows});
+      res.render('index', {
+        'shows': shows
+      });
     })
 });
+
+
 
 
 

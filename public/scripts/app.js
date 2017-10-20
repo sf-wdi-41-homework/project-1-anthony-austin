@@ -6,9 +6,8 @@ var allShows = [];
 $(document).ready(function(){
 
 // This is the link for The Movie Database API
-var movie = "https://api.themoviedb.org/3/movie/550?api_key=43e0d3b323afff75bed93507a243605d"
+var movie = "https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&query=Doug"
   var $resultsDiv = $('div#results');
-
 
 	$showList = $('#showTarget');
 	  $.ajax({
