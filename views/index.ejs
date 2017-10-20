@@ -1,8 +1,8 @@
-<form class="form-horizontal" id="newShowForm" action="api/shows" method="POST">
+<form class="form-horizontal border" id="newShowForm" action="api/shows" method="POST">
   <h3> Cast your vote for your favorite television shows</h3>
   <div class="row">
     <div class="col-md-3">
-      <input type="first name" class="form-control" placeholder="First an Last Name">
+      <input type="first name" class="form-control" name="users" placeholder="First an Last Name">
     </div>
     <div class="col-md-4">
       <input type="text" class="form-control" name="title" placeholder="First Show">
@@ -15,13 +15,11 @@
   </div>
   </div>
 </form>
-<div id="spacer">
-</div>
 <div class="row resposive">
   <div class="col-md-4">
     <form id="showCheck" class="checkForms border title" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="X Men">
-      <input type="submit" value="Check">
+      <input name="query" value="Halt and Catch Fire">
+      <input type="submit" value="Check" class="btn-primary">
       <input type="checkbox"> Confirm
       <h3 id="showTarget">
       </h3>
@@ -31,8 +29,8 @@
   </div>
   <div class="col-md-4">
     <form id="showCheck1" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="Batman">
-      <input type="submit" value="Check">
+      <input name="query" value="Mr. Robot">
+      <input type="submit" value="Check" class="btn-primary">
       <input type="checkbox"> Confirm
       <h3 id="showTarget1">
       </h3>
@@ -40,8 +38,8 @@
   </div>
   <div class="col-md-4">
     <form id="showCheck2" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="Iron Man">
-      <input type="submit" value="Check">
+      <input name="query" value="Silicon Valley">
+      <input type="submit" value="Check" class="btn-primary">
       <input type="checkbox"> Confirm
       <h3 id="showTarget2">
       </h3>
