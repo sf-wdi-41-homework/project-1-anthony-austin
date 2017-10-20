@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 
 var ShowSchema = new Schema({
   title: String,
+  users: String,
   // imageUrl: String,
   // genre: String,
   // description: String,
