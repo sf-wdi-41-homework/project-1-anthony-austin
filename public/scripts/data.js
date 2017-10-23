@@ -186,7 +186,6 @@ function handleSuccess(json) {
       </div>
     </div>
     <div class="spacer">
-    --------------------------------
     </div>
     `
     );
