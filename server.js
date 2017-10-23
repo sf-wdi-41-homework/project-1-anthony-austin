@@ -27,49 +27,36 @@ app.get('/', function homepage(req, res) {
 //create a show
 app.post('/api/shows', function (req, res) {
   var newShow = new db.Show({
-    title: req.body.title,
+    show: req.body.show,
+    date: req.body.date,
+    img: req.body.img,
+    poster: req.body.poster,
+    overview: req.body.overview,
+    backdrop: req.body.backdrop,
     users: req.body.users
   });
   newShow.save(function (err, show) {
     if (err) {
       return console.log("save error: " + err)
     }
-    res.json(show);
-  });
-});
-
-// function splitLowercase(threeShows) {
-//   upperCase = threeShows.toUpperCase(),
-//   upSplit = upperCase.split(',');
-//   return upSplit;
-// });
-//delete a show
-app.delete('/api/show/:id', function (req, res) {
-  console.log('show delete', req.params);
-  var showId = req.params.id;
-  db.Show.findOneAndRemove({
-    _id: showId
-  }, function (err, deletedShow) {
-    res.json(deletedShow);
+    console.log(newShow);
+    res.render('index')
   });
 });
 
 
-app.get('/api/shows', function (req, res) {
-  //let shows = db.Show.find()
+app.get('/api/shows', function(req, res) {
   db.Show.find()
-    .exec(function (err, shows) {
-      if (err) {
-        res.json({
-          "err": err
-        })
-      }
-      console.log(shows)
-      res.render('index', {
-        'shows': shows
+  .exec(function (err, shows) {
+    if (err) {
+      res.json({
+        "err": err
       });
-    })
-});
+    };
+    res.json(shows)
+    });
+  });
+
 
 
 

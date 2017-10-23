@@ -4,11 +4,13 @@ var mongoose = require('mongoose'),
 
 
 var ShowSchema = new Schema({
-  title: String,
-  users: String,
-  // imageUrl: String,
-  // genre: String,
-  // description: String,
+  show: String,
+  date: String,
+  img: String,
+  poster: String,
+  overview: String,
+  backdrop: String,
+  users: String
 })
 
 var Shows = mongoose.model('Shows', ShowSchema);

@@ -1,48 +1,83 @@
-<form class="form-horizontal border" id="newShowForm" action="api/shows" method="POST">
-  <h3> Cast your vote for your favorite television shows</h3>
-  <div class="row">
-    <div class="col-md-3">
-      <input type="first name" class="form-control" name="users" placeholder="First an Last Name">
+<!-- <div id="spacer">
+</div> -->
+<h2> Cast your vote for your top three TV Shows!</h2>
+
+<!-- <form>
+  <input type="text" id="userName" placeholder="Name">
+  <br>
+  <button type="button" id="enterUser" class="btn btn-danger btn-lg">Submit</button>
+</form> -->
+<!-- imported json info to submit to shows db hidden -->
+<div class="row">
+  <div class="col-md-4">
+    <form class="form-horizontal" id="newShowForm" action="api/shows" method="POST">
+      <input type="text" id="Show" class="form-control" name="show" placeholder="Show" hidden></input>
+      <input type="text" id="Date" class="form-control" name="date" placeholder="Date" hidden></input>
+      <input type="text" id="Img" class="form-control" name="img" placeholder="Img" hidden></input>
+      <input type="text" id="Poster" class="form-control" name="poster" placeholder="Poster" hidden></input>
+      <input type="text" id="Overview" class="form-control" name="overview" placeholder="Overview" hidden></input>
+      <input type="text" id="Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" hidden></input>
+      <!-- <input type="text" id="Users" class="form-control" name="users" placeholder="Users" hidden></input> -->
+      <!-- </form> -->
     </div>
     <div class="col-md-4">
-      <input type="text" class="form-control" name="title" placeholder="First Show">
-      <input type="text" class="form-control" name="title" placeholder="Second Show">
-      <input type="text" class="form-control" name="title" placeholder="Third Show">
+      <!-- <form class="form-horizontal" id="newShowForm1" action="api/shows" method="POST"> -->
+      <input type="text" id="1Show" class="form-control" name="show" placeholder="Show" hidden></input>
+      <input type="text" id="1Date" class="form-control" name="date" placeholder="Date" hidden></input>
+      <input type="text" id="1Img" class="form-control" name="img" placeholder="Img" hidden></input>
+      <input type="text" id="1Poster" class="form-control" name="poster" placeholder="Poster" hidden></input>
+      <input type="text" id="1Overview" class="form-control" name="overview" placeholder="Overview" hidden></input>
+      <input type="text" id="1Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" hidden></input>
+      <input type="text" id="1Users" class="form-control input-lg" name="users" placeholder="Name" required></input>
+      <!-- <button type="submit" id="1vote" class="btn btn-default" hidden="true"><a>Vote</a></button> -->
+      <!-- </form> -->
     </div>
-    <div>
-      <button type="submit" class="btn btn-default"><a>Submit</a></button>
-    </div>
+    <div class="col-md-4">
+      <!-- <form class="form-horizontal" id="newShowForm2" action="api/shows" method="POST"> -->
+      <input type="text" id="2Show" class="form-control" name="show" placeholder="Show" hidden></input>
+      <input type="text" id="2Date" class="form-control" name="date" placeholder="Date" hidden></input>
+      <input type="text" id="2Img" class="form-control" name="img" placeholder="Img" hidden></input>
+      <input type="text" id="2Overview" class="form-control" name="overview" placeholder="Overview" hidden></input>
+      <input type="text" id="2Poster" class="form-control" name="poster" placeholder="Poster" hidden></input>
+      <input type="text" id="2Backdrop" class="form-control" name="backdrop" placeholder="Backdrop" hidden></input>
+      <!-- <input type="text" id="2Users" class="form-control" name="users" placeholder="Users" hidden></input> -->
+      <!-- <button type="submit" id="2vote" class="btn btn-default" hidden="true"><a>Vote</a></button> -->
+      <button type="submit" id="vote" class="btn btn-lg btn-danger" hidden="true"><a>Vote</a></button>
+    </form>
   </div>
-  </div>
-</form>
+</div>
+
+<!-- api filter that pushs data to new form -->
 <div class="row resposive">
   <div class="col-md-4">
     <form id="showCheck" class="checkForms border title" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="Halt and Catch Fire">
-      <input type="submit" value="Check" class="btn-primary">
-      <input type="checkbox"> Confirm
+      <input name="query" id="input" accept="" value="Halt and Catch Fire" >
+      <input type="submit" id="check" value="Check" class="btn-primary" >
       <h3 id="showTarget">
       </h3>
-    <div class="checkbox">
-      </div>
     </form>
   </div>
   <div class="col-md-4">
     <form id="showCheck1" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="Mr. Robot">
-      <input type="submit" value="Check" class="btn-primary">
-      <input type="checkbox"> Confirm
+      <input name="query" id="1input" value="Mr. Robot" >
+      <input type="submit" id="1check" value="Check" class="btn-primary">
       <h3 id="showTarget1">
       </h3>
     </form>
   </div>
   <div class="col-md-4">
     <form id="showCheck2" class="checkForms border" method="GET" action="https://api.themoviedb.org/3/search/tv?api_key=43e0d3b323afff75bed93507a243605d&language=en-US&page=1&">
-      <input name="query" value="Silicon Valley">
-      <input type="submit" value="Check" class="btn-primary">
-      <input type="checkbox"> Confirm
+      <input name="query" id="2input" value="Silicon Valley" >
+      <input type="submit" id="2check" value="Check" class="btn-primary">
       <h3 id="showTarget2">
       </h3>
     </form>
+  </div>
+</div>
+
+
+<div class="container">
+  <div id="resultsTarget">
+
   </div>
 </div>
