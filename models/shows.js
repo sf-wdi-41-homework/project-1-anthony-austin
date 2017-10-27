@@ -1,6 +1,7 @@
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
-  mongoose.Promise = global.Promise;
+// No tab necessary
+mongoose.Promise = global.Promise;
 
 
 var ShowSchema = new Schema({
@@ -10,6 +11,7 @@ var ShowSchema = new Schema({
   poster: String,
   overview: String,
   backdrop: String,
+  // Should this be an vote count? or an array of users?
   users: String
 })
 
