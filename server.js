@@ -26,6 +26,9 @@ app.get('/', function homepage(req, res) {
 
 //create a show
 app.post('/api/shows', function (req, res) {
+  // Very interesting configuration you have going here :)
+  // But usually you will use your frontend (data.js) speak to your backend (server.js)
+  // and the backend will make all API requests. Backend usually handles the data.
   var newShow = new db.Show({
     show: req.body.show,
     date: req.body.date,
@@ -33,6 +36,7 @@ app.post('/api/shows', function (req, res) {
     poster: req.body.poster,
     overview: req.body.overview,
     backdrop: req.body.backdrop,
+    // This would usually be req.body.user
     users: req.body.users
   });
   newShow.save(function (err, show) {
@@ -59,7 +63,7 @@ app.get('/api/shows', function(req, res) {
 
 
 
-
+// Faaaaar too many spaces here :)
 
 
 app.listen(process.env.PORT || 3000, function () {

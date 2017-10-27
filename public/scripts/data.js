@@ -8,41 +8,22 @@ var allShows = [];
 $(document).ready(function () {
   console.log("JS is working")
 
+    // Notice how you use the same #shoeCheck 3 times in this file and it's the same
+    // for each use. You only need 1 for all requests.
+    // For example, you could have given the form a class named showCheck
+    // and then created 1 event for form submission.
+    // See HTML file for matching changes.
 
-
-  $('#showCheck').on('submit', function (e) {
+  $('.showCheck').on('submit', function (e) {
     e.preventDefault();
     showData = $(this).serialize();
     search = (tvShow + showData);
     $.ajax({
       method: "GET",
+      // I think you intended to use the search variable here
       url: tvShow + showData,
       success: onSuccess,
       error: onError
-    });
-  });
-
-  $('#showCheck1').on('submit', function (e) {
-    e.preventDefault();
-    showData = $(this).serialize();
-    search = (tvShow + showData);
-    $.ajax({
-      method: "GET",
-      url: tvShow + showData,
-      success: onSuccess1,
-      error: onError1
-    });
-  });
-
-  $('#showCheck2').on('submit', function (e) {
-    e.preventDefault();
-    showData = $(this).serialize();
-    search = (tvShow + showData);
-    $.ajax({
-      method: "GET",
-      url: tvShow + showData,
-      success: onSuccess2,
-      error: onError2
     });
   });
 
@@ -92,57 +73,6 @@ function onSuccess(json) {
 };
 
 function onError(a, b, c) {
-  console.log(b);
-  console.log(c);
-}
-
-
-function onSuccess1(json) {
-  console.log("SUCCESS: ", json.results[0]);
-  $("#showTarget1").empty();
-  $("#showTarget1").append('<img src="' + imgLocation + json.results[0].poster_path + '">');
-  $("#showTarget1").append('</br>')
-  $("#showTarget1").append(json.results[0].name);
-  $("#1Show").empty();
-  $("#1Date").empty();
-  $('#1Img').empty();
-  $("#1Overview").empty();
-  $('#1Backdrop').empty();
-  $("#1Show").val(json.results[0].name);
-  $("#1Date").val(json.results[0].first_air_date);
-  $('#1Img').val('<img src="' + imgLocation + json.results[0].poster_path + '">');
-  $('#1Poster').val('<img class="resize" src="' + imgPoster + json.results[0].poster_path + '">');
-  $("#1Overview").val(json.results[0].overview + ' ^');
-  $('#1Backdrop').val('<img src="' + backdropLocation + json.results[0].backdrop_path + '">');
-  $('#1vote').attr('hidden', false);
-};
-
-function onError1(a, b, c) {
-  console.log(b);
-  console.log(c);
-}
-
-function onSuccess2(json) {
-  console.log("SUCCESS: ", json.results[0]);
-  $("#showTarget2").empty();
-  $("#showTarget2").append('<img src="' + imgLocation + json.results[0].poster_path + '">');
-  $("#showTarget2").append('</br>')
-  $("#showTarget2").append(json.results[0].name);
-  $("#2Show").empty();
-  $("#2Date").empty();
-  $('#2Img').empty();
-  $("#2Overview").empty();
-  $('#2Backdrop').empty();
-  $("#2Show").val(json.results[0].name);
-  $("#2Date").val(json.results[0].first_air_date);
-  $('#2Img').val('<img src="' + imgLocation + json.results[0].poster_path + '">');
-  $('#2Poster').val('<img class="resize" src="' + imgPoster + json.results[0].poster_path + '">');
-  $("#2Overview").val(json.results[0].overview);
-  $('#2Backdrop').val('<img src="' + backdropLocation + json.results[0].backdrop_path + '">');
-  $('#2vote').attr('hidden', false);
-};
-
-function onError2(a, b, c) {
   console.log(b);
   console.log(c);
 }
